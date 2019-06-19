@@ -24,3 +24,14 @@ jobs:
       - store_artifacts:
           path: test-reports/
           destination: python_app
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+
+
