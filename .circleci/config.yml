@@ -24,15 +24,15 @@ jobs:
       - store_artifacts:
           path: test-reports/
           destination: python_app
-build2:
-    docker:
-      - image: circleci/python:3.6
-    steps:
-      - checkout
-      - restore_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
-      - run:
-          command: echo 'Hellooo !!'
+  build2:
+      docker:
+        - image: circleci/python:3.6
+      steps:
+        - checkout
+        - restore_cache:
+            key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+        - run:
+            command: echo 'Hellooo !!'
 
 workflows:
   version: 2
